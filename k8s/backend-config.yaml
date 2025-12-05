@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  PORT: "5001"
+  CLIENT_URL: "http://localhost:5173"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-secrets
+type: Opaque
+stringData:
+  MONGODB_CONNECTIONSTRING: "mongodb+srv://leduydat0202_db_user:TtxKrgCdDdR83YzE@cluster0.3gvolzj.mongodb.net/?appName=Cluster0"
+  ACCESS_TOKEN_SECRET: "35860147d9a5ff0bae083d51951e5bf9629c5ed2a3bdf72770ab5d249fee419d28294d0e4f2ae815429cdbb6f54cee88c0f718c365a9fe1cfd31bc51046a9af3"

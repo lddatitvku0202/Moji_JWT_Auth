@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moji-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: moji-backend
+  template:
+    metadata:
+      labels:
+        app: moji-backend
+    spec:
+      containers:
+      - name: moji-backend
+        image: moji-backend:v1
+        ports:
+        - containerPort: 5001
+        envFrom:
+        - configMapRef:
+            name: backend-config
+        - secretRef:
+            name: backend-secrets

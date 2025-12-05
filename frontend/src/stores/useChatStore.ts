@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware';
 
 export const useChatStore = create<ChatState>()(
     persist(
-        (set, get) => ({
+        (set) => ({
             conversations: [],
             messages: {},
             activeConversationId: null,

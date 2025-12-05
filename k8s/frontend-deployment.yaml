@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moji-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moji-frontend
+  template:
+    metadata:
+      labels:
+        app: moji-frontend
+    spec:
+      containers:
+      - name: moji-frontend
+        image: moji-frontend:v1
+        ports:
+        - containerPort: 80
