@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: moji-frontend
-        image: moji-frontend:v1
+        image: lddatvku0202/moji-backend:v1
         ports:
         - containerPort: 80
